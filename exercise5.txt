@@ -1,0 +1,17 @@
+SELECT guestname, guestaddress, city FROM guest JOIN booking ON guest.guestno = booking.guestno JOIN hotel ON booking.hotelno = hotel.hotelno WHERE city="London" ORDER BY guestname;
+
+SELECT roomno, type, price FROM room WHERE type="single" and price <40 or type="double" and price < 40.00 ORDER BY price;
+SELECT roomno, type, price FROM room WHERE price < 40 AND type IN ('single','double') ORDER BY price;
+
+SELECT * FROM booking WHERE dateto is NULL;
+
+SELECT avg(price) FROM room;
+
+SELECT SUM(price) FROM room WHERE type='double';
+
+SELECT guestno, datefrom, dateto FROM booking WHERE (datefrom >= '2004-08-01' AND dateto <= '2004-08-31');
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT roomno, hotelname FROM room JOIN hotel ON room.hotelno = hotel.hotelno WHERE hotelname='Grosvenor';
+
+
